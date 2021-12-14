@@ -44,6 +44,13 @@ public class RegistrationServiceImpl {
     @GET
     public Response purge(@QueryParam("organizationId") String organizationId) {
 
+        if ("c1b2cfb2-e965-4d28-b36d-b34f162ecc30".equals(organizationId) ||
+                "783c6c4d-8b9b-4190-b70a-e717ab1ee739".equals(organizationId)) {
+            return Response.status(Response.Status.BAD_REQUEST).
+                    entity("Are you kidding! Choreo Org is not allowed to remove!").
+                    build();
+        }
+
         Map<String, String> result = new LinkedHashMap<>();
         Set<OrganizationPurge> orgPurgeList = OrganizationCleanupManager.getOrganizationPurgeServiceList();
         boolean isStartedTenantFlow = false;
