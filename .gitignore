@@ -1,0 +1,15 @@
+# Ignore everything in this directory
+target
+.classpath
+.settings
+.project
+*.i??
+.idea
+.factorypath
+*.h2.db
+*.mv.db
+*.DS_Store
+*.trace.db
+*-api.yaml.sha256
+*.war
+
